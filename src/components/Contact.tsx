@@ -111,8 +111,8 @@ export default function Contact({ preselectedCourse, setPreselectedCourse }: Con
                 </div>
                 <div>
                   <span className="block text-[10px] uppercase tracking-wider font-bold text-slate-400">PHONE ENQUIRIES</span>
-                  <a href="tel:+919876543210" className="block text-base font-extrabold text-slate-800 hover:text-brand-600 transition-colors">
-                    +91 98765 43210
+                  <a href="tel:+916390247880" className="block text-base font-extrabold text-slate-800 hover:text-brand-600 transition-colors">
+                    +91 63902 47880
                   </a>
                   <span className="text-xs text-slate-400 mt-0.5 block">(Toll-Free Helpline) Support: 8 AM - 8 PM</span>
                 </div>
@@ -127,7 +127,7 @@ export default function Contact({ preselectedCourse, setPreselectedCourse }: Con
                   <span className="block text-[10px] uppercase tracking-wider font-bold text-emerald-600">WHATSAPP CHAT</span>
                   <span className="block text-base font-bold text-slate-800">Direct Chat with Counselors</span>
                   <a
-                    href="https://wa.me/919876543210?text=Hi%20Evolution%20Career%20Institute,%20I%20am%20interested%20in%20learning%20more%20about%20your%20coaching%20classes."
+                    href="https://wa.me/916390247880?text=Hi%20Evolution%20Career%20Institute,%20I%20am%20interested%20in%20learning%20more%20about%20your%20coaching%20classes."
                     target="_blank"
                     rel="noopener noreferrer"
                     className="inline-flex items-center gap-1.5 bg-emerald-600 hover:bg-emerald-700 text-white font-bold text-xs px-4 py-2 rounded-xl mt-2 transition-colors focus:outline-none"
@@ -244,7 +244,7 @@ export default function Contact({ preselectedCourse, setPreselectedCourse }: Con
                           type="tel"
                           value={phone}
                           onChange={(e) => setPhone(e.target.value)}
-                          placeholder="9876543210"
+                          placeholder="6390247880"
                           className="w-full bg-white border border-slate-200 rounded-xl pl-16 pr-4 py-3 text-sm focus:outline-none focus:border-brand-500 transition-colors"
                         />
                       </div>

@@ -52,7 +52,7 @@ export default function FloatingWhatsApp() {
 
       {/* Main WhatsApp Float Trigger */}
       <motion.a
-        href="https://wa.me/919876543210?text=Hi%20Evolution%20Career%20Institute,%20I%20am%20interested%20in%20learning%20more%20about%20your%20coaching%20classes."
+        href="https://wa.me/916390247880?text=Hi%20Evolution%20Career%20Institute,%20I%20am%20interested%20in%20learning%20more%20about%20your%20coaching%20classes."
         target="_blank"
         rel="noopener noreferrer"
         whileHover={{ scale: 1.08 }}
