@@ -1,0 +1,6 @@
+{
+  "name": "Evolution Career Institute",
+  "description": "Modern and professional website for Evolution Career Institute, a leading coaching center in India for classes 9-12 and competitive exams.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
