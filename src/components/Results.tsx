@@ -165,7 +165,7 @@ export default function Results() {
             transition={{ duration: 0.25 }}
             className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-4 gap-6 mb-16"
           >
-            {activeBatch?.students.map((student) => {
+            {activeBatch?.students.map((student, idx) => {
               const initials = student.name
                 .replace(/^(Mohd\.|Mr\.|Mrs\.|Dr\.)\s+/gi, "")
                 .split(/\s+/)
@@ -177,42 +177,72 @@ export default function Results() {
               return (
                 <motion.div
                   key={student.name}
-                  whileHover={{ y: -4, scale: 1.02 }}
-                  transition={{ type: "spring", stiffness: 400, damping: 25 }}
-                  className="bg-slate-50/50 rounded-2xl border border-slate-200/60 p-5 shadow-sm hover:shadow-md hover:bg-white transition-all duration-300 flex flex-col justify-between group cursor-pointer"
+                  initial={{ opacity: 0, y: 30 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  whileHover={{ y: -8, scale: 1.02, border: "1px solid var(--color-brand-300)" }}
+                  viewport={{ once: true, margin: "-50px" }}
+                  transition={{
+                    type: "spring",
+                    stiffness: 300,
+                    damping: 20,
+                    opacity: { duration: 0.5, delay: idx * 0.08 },
+                    y: { type: "spring", stiffness: 300, damping: 20, delay: idx * 0.04 }
+                  }}
+                  className="bg-slate-50 rounded-3xl border border-slate-200/60 p-5 flex flex-col justify-between shadow-sm hover:shadow-xl hover:shadow-brand-500/5 transition-all duration-300 group cursor-pointer"
                 >
-                  <div>
-                    <div className="flex items-center gap-3 mb-4">
-                      <div className="h-10 w-10 rounded-xl bg-gradient-to-tr from-brand-50 to-brand-100/60 border border-brand-200/40 flex items-center justify-center text-brand-700 font-display font-black text-xs shrink-0 group-hover:from-brand-600 group-hover:to-brand-700 group-hover:text-white transition-all duration-300">
-                        {initials}
+                  {/* Image with decorative border */}
+                  <div className="relative aspect-square w-full rounded-2xl overflow-hidden mb-5 border-2 border-white shadow bg-slate-200 flex items-center justify-center">
+                    {student.imageUrl ? (
+                      <img
+                        src={student.imageUrl}
+                        alt={student.name}
+                        className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                        referrerPolicy="no-referrer"
+                      />
+                    ) : (
+                      <div className="w-full h-full bg-gradient-to-tr from-brand-500 to-sky-600 flex flex-col items-center justify-center text-white p-4">
+                        <GraduationCap className="h-10 w-10 mb-2 text-brand-200" />
+                        <span className="text-2xl font-display font-black tracking-wider">{initials}</span>
                       </div>
-                      <div>
-                        <h4 className="font-display font-bold text-sm text-slate-900 group-hover:text-brand-600 transition-colors">
-                          {student.name}
-                        </h4>
-                        <p className="text-[10px] text-slate-400 font-mono uppercase">
-                          STUDENT ACHIEVER
-                        </p>
-                      </div>
+                    )}
+                    
+                    {/* Winner ribbon badge overlay */}
+                    <div className="absolute top-3 right-3 bg-brand-600 text-white p-1.5 rounded-xl shadow-md">
+                      <Sparkles className="h-4 w-4 text-amber-300 animate-pulse" />
                     </div>
 
-                    {/* Scores Tag Stack */}
-                    <div className="space-y-2">
-                      {student.scores.map((scoreObj, sIdx) => (
-                        <div
-                          key={sIdx}
-                          className="flex items-center justify-between p-2 rounded-xl bg-white border border-slate-100 group-hover:border-brand-100/40 transition-all duration-300"
-                        >
-                          <span className="text-xs font-medium text-slate-600 flex items-center gap-1.5">
-                            <BookOpen className="h-3 w-3 text-brand-500 shrink-0" />
-                            {scoreObj.subject}
-                          </span>
-                          <span className="text-xs font-black text-brand-700 bg-brand-50 border border-brand-100/50 px-2 py-0.5 rounded-lg">
-                            {scoreObj.score}
-                          </span>
-                        </div>
-                      ))}
+                    <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/80 via-black/30 to-transparent p-4 pt-12 text-white">
+                      <span className="block text-[10px] tracking-wider uppercase font-bold text-brand-300 font-mono">
+                        {activeBatchId === "b12" ? "Class 12th Batch" : "Class 10th Batch"}
+                      </span>
+                      <span className="block text-base font-bold font-display leading-tight mt-0.5">
+                        {student.name}
+                      </span>
                     </div>
+                  </div>
+
+                  {/* Achievement Badge / Scores Content */}
+                  <div className="space-y-3">
+                    <div className="bg-brand-50 hover:bg-brand-100 border border-brand-100 p-3 rounded-2xl transition-colors">
+                      <span className="block text-[9px] uppercase font-bold text-brand-500 tracking-wider mb-2 text-center">SCORES ACHIEVED</span>
+                      <div className="space-y-1.5">
+                        {student.scores.map((scoreObj, sIdx) => (
+                          <div key={sIdx} className="flex items-center justify-between text-xs px-2 py-1 bg-white rounded-lg border border-slate-100/60">
+                            <span className="font-medium text-slate-600 flex items-center gap-1">
+                              <BookOpen className="h-3 w-3 text-brand-500" />
+                              {scoreObj.subject}
+                            </span>
+                            <span className="font-extrabold text-brand-800">
+                              {scoreObj.score}
+                            </span>
+                          </div>
+                        ))}
+                      </div>
+                    </div>
+                    
+                    <span className="block text-center text-[10px] text-slate-400 font-mono">
+                      Batch Year: Class of 2025-2026
+                    </span>
                   </div>
                 </motion.div>
               );

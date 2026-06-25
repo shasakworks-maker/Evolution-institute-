@@ -2,6 +2,7 @@ import { useState } from "react";
 import Navbar from "./components/Navbar";
 import Hero from "./components/Hero";
 import About from "./components/About";
+import VideoTheater from "./components/VideoTheater";
 import Courses from "./components/Courses";
 import OfficialBanners from "./components/OfficialBanners";
 import WhyChooseUs from "./components/WhyChooseUs";
@@ -58,6 +59,9 @@ export default function App() {
 
         {/* 3. About Institute (Mission, Vision, Certified Stats) */}
         <About />
+
+        {/* Dynamic Video Animations & Concept Labs */}
+        <VideoTheater onEnquireClick={handleCourseEnquiry} />
 
         {/* 4. Courses Catalog (Classes 9, 10, 11, 12, competitive options) */}
         <Courses onEnquireClick={handleCourseEnquiry} />

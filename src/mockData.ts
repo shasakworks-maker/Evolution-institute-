@@ -254,35 +254,35 @@ export const GALLERY_ITEMS: GalleryItem[] = [
 export const RESULTS: ResultRecord[] = [
   {
     id: "r1",
-    studentName: "Aarav Singhal",
-    exam: "JEE Advanced 2025",
-    score: "All India Rank 24",
-    year: "2025",
-    imageUrl: "https://images.unsplash.com/photo-1539571696357-5a69c17a67c6?auto=format&fit=crop&w=400&q=80"
+    studentName: "Mahi Singh",
+    exam: "12 Batch (2025-2026)",
+    score: "Chemistry - 90%, English - 86%",
+    year: "2025-2026",
+    imageUrl: "https://cdn.phototourl.com/free/2026-06-25-381d37f5-fd9a-47ae-b0f7-d85f7d304610.jpg"
   },
   {
     id: "r2",
-    studentName: "Ananya Deshmukh",
-    exam: "NEET-UG 2025",
-    score: "AIR 89 (Score: 715/720)",
-    year: "2025",
-    imageUrl: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=400&q=80"
+    studentName: "Safiya Qureshi",
+    exam: "12 Batch (2025-2026)",
+    score: "Biology - 92%, Chemistry - 82%",
+    year: "2025-2026",
+    imageUrl: "https://cdn.phototourl.com/member/2026-06-25-ff8485b1-1277-45ed-a50c-68bcac0d916f.jpg"
   },
   {
     id: "r3",
-    studentName: "Kabir Mehta",
-    exam: "CBSE Class 12 Boards",
-    score: "99.2% (Science State Rank 2)",
-    year: "2025",
-    imageUrl: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=400&q=80"
+    studentName: "Tuba Mriyam",
+    exam: "12 Batch (2025-2026)",
+    score: "Chemistry - 80%, Biology - 82%, English - 80%",
+    year: "2025-2026",
+    imageUrl: "https://cdn.phototourl.com/member/2026-06-25-f6f2139c-8616-4a24-b4fa-f85c325e5586.jpg"
   },
   {
     id: "r4",
-    studentName: "Priyanka Chawla",
-    exam: "JEE Mains 2025",
-    score: "99.98 Percentile",
-    year: "2025",
-    imageUrl: "https://images.unsplash.com/photo-1517841905240-472988babdf9?auto=format&fit=crop&w=400&q=80"
+    studentName: "Nandini",
+    exam: "12 Batch (2025-2026)",
+    score: "English - 86%, Chemistry - 82%, Biology - 82%",
+    year: "2025-2026",
+    imageUrl: "https://cdn.phototourl.com/member/2026-06-25-856d1e83-7306-41dd-aeae-fa42e2b468c2.jpg"
   }
 ];
 
@@ -322,6 +322,7 @@ export const INITIAL_TESTIMONIALS: Testimonial[] = [
 export interface BatchStudentResult {
   name: string;
   scores: { subject: string; score: string }[];
+  imageUrl?: string;
 }
 
 export interface BatchResult {
@@ -340,41 +341,57 @@ export const BATCH_RESULTS: BatchResult[] = [
         scores: [
           { subject: "Biology", score: "92%" },
           { subject: "Chemistry", score: "82%" }
-        ]
+        ],
+        imageUrl: "https://cdn.phototourl.com/member/2026-06-25-ff8485b1-1277-45ed-a50c-68bcac0d916f.jpg"
       },
       {
         name: "Mahi Singh",
         scores: [
           { subject: "Chemistry", score: "90%" },
           { subject: "English", score: "86%" }
-        ]
+        ],
+        imageUrl: "https://cdn.phototourl.com/free/2026-06-25-381d37f5-fd9a-47ae-b0f7-d85f7d304610.jpg"
       },
       {
         name: "Nandini",
         scores: [
-          { subject: "English", score: "88%" },
-          { subject: "Chemistry", score: "82%" }
-        ]
+          { subject: "English", score: "86%" },
+          { subject: "Chemistry", score: "82%" },
+          { subject: "Biology", score: "82%" }
+        ],
+        imageUrl: "https://cdn.phototourl.com/member/2026-06-25-856d1e83-7306-41dd-aeae-fa42e2b468c2.jpg"
       },
       {
-        name: "Tuba Mariyam",
+        name: "Tuba Mriyam",
         scores: [
-          { subject: "English", score: "88%" },
-          { subject: "Biology", score: "82%" }
-        ]
+          { subject: "Chemistry", score: "80%" },
+          { subject: "Biology", score: "82%" },
+          { subject: "English", score: "80%" }
+        ],
+        imageUrl: "https://cdn.phototourl.com/member/2026-06-25-f6f2139c-8616-4a24-b4fa-f85c325e5586.jpg"
+      },
+      {
+        name: "Aryan Mishra",
+        scores: [
+          { subject: "Physics", score: "94%" },
+          { subject: "Mathematics", score: "91%" }
+        ],
+        imageUrl: "https://cdn.phototourl.com/member/2026-06-25-d9323215-5e9b-42d8-a8ae-58075e23a2b1.jpg"
       },
       {
         name: "Ayan Qureshi",
         scores: [
           { subject: "Biology", score: "82%" }
-        ]
+        ],
+        imageUrl: "https://cdn.phototourl.com/member/2026-06-25-400d0b59-ad7d-4519-9c7f-894ef2b14d9e.jpg"
       },
       {
         name: "Saqib Qureshi",
         scores: [
           { subject: "Chemistry", score: "80%" },
           { subject: "English", score: "77%" }
-        ]
+        ],
+        imageUrl: "https://cdn.phototourl.com/free/2026-06-25-7869b022-c334-4c41-9204-0fc2574210e3.jpg"
       }
     ]
   },
@@ -390,17 +407,19 @@ export const BATCH_RESULTS: BatchResult[] = [
         ]
       },
       {
-        name: "Mohd. Arkan",
+        name: "Mohd Arkan",
         scores: [
           { subject: "SST", score: "89%" },
           { subject: "English", score: "83%" }
-        ]
+        ],
+        imageUrl: "https://cdn.phototourl.com/member/2026-06-25-98296ef2-4935-44e2-a38d-401c91522370.jpg"
       },
       {
-        name: "Mohd. Navef",
+        name: "Mohd Naved",
         scores: [
           { subject: "English", score: "87%" }
-        ]
+        ],
+        imageUrl: "https://cdn.phototourl.com/free/2026-06-25-a1d023a8-f646-45df-a132-7ed139a20ccf.jpg"
       },
       {
         name: "Veer Singh",
@@ -420,13 +439,15 @@ export const BATCH_RESULTS: BatchResult[] = [
         name: "Sakshi Maurya",
         scores: [
           { subject: "English", score: "80%" }
-        ]
+        ],
+        imageUrl: "https://cdn.phototourl.com/member/2026-06-25-298ccfa0-cbdd-47e6-a350-9bd4c99e282c.jpg"
       },
       {
         name: "Ankita Pandey",
         scores: [
           { subject: "Overall", score: "80%" }
-        ]
+        ],
+        imageUrl: "https://cdn.phototourl.com/member/2026-06-25-72d2dd64-d83e-420f-8e96-893b4b029def.jpg"
       }
     ]
   }
