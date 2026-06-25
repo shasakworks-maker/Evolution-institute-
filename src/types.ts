@@ -22,7 +22,7 @@ export interface Teacher {
 export interface GalleryItem {
   id: string;
   title: string;
-  category: "Classroom" | "Activities" | "Students";
+  category: "Classroom" | "Activities" | "Students" | "Pamphlets";
   imageUrl: string;
 }
 

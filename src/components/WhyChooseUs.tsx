@@ -100,11 +100,18 @@ export default function WhyChooseUs() {
           {highlights.map((item, idx) => (
             <motion.div
               key={item.title}
-              initial={{ opacity: 0, y: 20 }}
+              initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
+              whileHover={{ y: -8, scale: 1.02, borderColor: "rgb(59 130 246 / 0.5)", backgroundColor: "rgba(30, 41, 59, 0.7)" }}
               viewport={{ once: true, margin: "-100px" }}
-              transition={{ duration: 0.5, delay: idx * 0.1 }}
-              className="bg-brand-900/40 hover:bg-brand-900/60 backdrop-blur rounded-3xl p-8 border border-brand-800/80 hover:border-brand-700/80 transition-all duration-300 group flex flex-col justify-between"
+              transition={{ 
+                type: "spring",
+                stiffness: 260,
+                damping: 20,
+                opacity: { duration: 0.5, delay: idx * 0.1 },
+                y: { type: "spring", stiffness: 260, damping: 20, delay: idx * 0.05 }
+              }}
+              className="bg-brand-900/40 backdrop-blur rounded-3xl p-8 border border-brand-800/80 transition-all duration-300 group flex flex-col justify-between cursor-pointer"
             >
               <div className="space-y-6">
                 <div className={`p-4 rounded-2xl w-14 h-14 flex items-center justify-center ${item.color} shadow-lg shadow-black/10`}>

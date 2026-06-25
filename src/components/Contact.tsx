@@ -145,9 +145,9 @@ export default function Contact({ preselectedCourse, setPreselectedCourse }: Con
                 <div>
                   <span className="block text-[10px] uppercase tracking-wider font-bold text-slate-400">VISITING ADDRESS</span>
                   <address className="not-italic text-sm font-bold text-slate-700 leading-snug">
-                    Evolution Tower, Plot 42-A, <br />
-                    Sector-11, Near Metro Gate-2, <br />
-                    Dwarka, New Delhi - 110075
+                    Evolution Career Institute, <br />
+                    Neelkanth complex, near sainik bhojnalaya, <br />
+                    Sadat Cantt, Lucknow, Uttar Pradesh
                   </address>
                 </div>
               </div>
@@ -158,7 +158,7 @@ export default function Contact({ preselectedCourse, setPreselectedCourse }: Con
             <div className="rounded-3xl overflow-hidden border border-slate-200 shadow-lg aspect-video w-full relative bg-slate-100">
               <iframe
                 title="Evolution Career Institute Campus Location"
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d14013.332306351084!2d77.06209594247502!3d28.589761922449746!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390d1b327b827e8d%3A0x6e76cf0a2d3345!2sDwarka%20Sector%2011!5e0!3m2!1sen!2sin!4v1700000000000!5m2!1sen!2sin"
+                src="https://maps.google.com/maps?q=Neelkanth%20complex,near%20sainik%20bhojnalaya%20sadat%20cantt,lucknow&t=&z=15&ie=UTF8&iwloc=&output=embed"
                 className="w-full h-full border-0"
                 allowFullScreen
                 loading="lazy"

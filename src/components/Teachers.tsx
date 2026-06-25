@@ -26,25 +26,37 @@ export default function Teachers() {
           {TEACHERS.map((teacher, idx) => (
             <motion.div
               key={teacher.id}
-              initial={{ opacity: 0, y: 20 }}
+              initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: idx * 0.1 }}
-              className="bg-white rounded-3xl border border-slate-100 shadow-xl shadow-slate-200/40 hover:shadow-2xl hover:shadow-brand-500/5 hover:-translate-y-1.5 transition-all duration-300 overflow-hidden flex flex-col justify-between group"
+              whileHover={{ y: -8, scale: 1.02, borderColor: "var(--color-brand-200)" }}
+              viewport={{ once: true, margin: "-50px" }}
+              transition={{
+                type: "spring",
+                stiffness: 300,
+                damping: 20,
+                opacity: { duration: 0.5, delay: idx * 0.08 },
+                y: { type: "spring", stiffness: 300, damping: 20, delay: idx * 0.04 }
+              }}
+              className="bg-white rounded-3xl border border-slate-100 shadow-xl shadow-slate-200/40 hover:shadow-2xl hover:shadow-brand-500/5 transition-all duration-300 overflow-hidden flex flex-col justify-between group cursor-pointer"
             >
               <div>
-                {/* Image Frame with Overlay Design */}
-                <div className="relative aspect-square overflow-hidden bg-slate-100">
-                  <img
-                    src={teacher.photoUrl}
-                    alt={teacher.name}
-                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-                    referrerPolicy="no-referrer"
-                  />
+                {/* Elegant Initials Badge instead of Photo */}
+                <div className="relative p-6 pb-2 flex items-center justify-between">
+                  <div className="flex items-center justify-center h-14 w-14 rounded-2xl bg-gradient-to-tr from-brand-50 to-brand-100/80 text-brand-700 font-display font-black text-lg border border-brand-200/50 shadow-sm group-hover:from-brand-600 group-hover:to-brand-700 group-hover:text-white transition-all duration-300">
+                    {teacher.name
+                      .replace(/^(Er\.|Mr\.|Mrs\.|Dr\.|Md\.)\s+/gi, "")
+                      .replace(/\./g, "")
+                      .split(/\s+/)
+                      .filter(Boolean)
+                      .map(n => n[0])
+                      .join("")
+                      .toUpperCase()
+                      .slice(0, 2) || "TR"}
+                  </div>
                   
                   {/* Specialized Label */}
-                  <div className="absolute bottom-3 left-3 bg-brand-900/90 backdrop-blur text-white px-3 py-1 rounded-xl text-[10px] font-bold tracking-wider uppercase font-mono">
-                    HOD - {teacher.subject}
+                  <div className="bg-slate-100 text-slate-700 border border-slate-200/50 px-3 py-1 rounded-xl text-[10px] font-bold tracking-wider uppercase font-mono group-hover:bg-brand-50 group-hover:text-brand-700 group-hover:border-brand-200/60 transition-colors duration-300">
+                    {teacher.subject}
                   </div>
                 </div>
 

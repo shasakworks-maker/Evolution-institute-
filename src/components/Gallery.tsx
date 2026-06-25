@@ -4,10 +4,10 @@ import { GALLERY_ITEMS } from "../mockData";
 import { Maximize2, X, ChevronLeft, ChevronRight, Sparkles } from "lucide-react";
 
 export default function Gallery() {
-  const [activeCategory, setActiveCategory] = useState<"All" | "Classroom" | "Activities" | "Students">("All");
+  const [activeCategory, setActiveCategory] = useState<"All" | "Classroom" | "Activities" | "Students" | "Pamphlets">("All");
   const [lightboxIndex, setLightboxIndex] = useState<number | null>(null);
 
-  const categories = ["All", "Classroom", "Activities", "Students"];
+  const categories = ["All", "Classroom", "Activities", "Students", "Pamphlets"];
 
   const filteredItems = activeCategory === "All"
     ? GALLERY_ITEMS

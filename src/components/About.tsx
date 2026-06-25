@@ -86,9 +86,10 @@ export default function About() {
                   key={val.title}
                   initial={{ opacity: 0, y: 15 }}
                   whileInView={{ opacity: 1, y: 0 }}
+                  whileHover={{ y: -6, scale: 1.02, boxShadow: "0 20px 25px -5px rgb(0 0 0 / 0.05), 0 8px 10px -6px rgb(0 0 0 / 0.05)" }}
                   viewport={{ once: true }}
-                  transition={{ duration: 0.5, delay: idx * 0.1 }}
-                  className="bg-slate-50 hover:bg-brand-50 p-5 rounded-2xl border border-slate-100 hover:border-brand-100 transition-all duration-300"
+                  transition={{ type: "spring", stiffness: 300, damping: 20 }}
+                  className="bg-slate-50 p-5 rounded-2xl border border-slate-100 hover:border-brand-100 hover:bg-brand-50 transition-colors duration-300"
                 >
                   <div className="mb-3 bg-white p-2.5 rounded-xl inline-block shadow-sm">
                     {val.icon}

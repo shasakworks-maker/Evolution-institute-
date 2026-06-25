@@ -51,7 +51,7 @@ export default function Footer() {
             </a>
             
             <p className="text-xs sm:text-sm text-slate-400 leading-relaxed">
-              Evolution Career Institute is Delhi's premium tutoring institution. We guide science, engineering, and medical aspirants toward deep logical clarity and outstanding ranks.
+              Evolution Career Institute is Lucknow's premium tutoring institution. We guide science, engineering, and medical aspirants toward deep logical clarity and outstanding ranks.
             </p>
 
             {/* Social Icons */}
@@ -147,6 +147,16 @@ export default function Footer() {
               Help Desk Contact
             </h4>
             <ul className="space-y-3.5 text-xs sm:text-sm">
+              <li className="flex items-start gap-2.5 text-slate-400">
+                <MapPin className="h-4 w-4 text-brand-400 shrink-0 mt-0.5" />
+                <div>
+                  <span className="block text-slate-300 font-semibold leading-snug">
+                    Neelkanth complex, near sainik bhojnalaya, <br />
+                    Sadat Cantt, Lucknow
+                  </span>
+                  <span className="text-[10px] block">Visiting Campus & Headquarters</span>
+                </div>
+              </li>
               <li className="flex items-start gap-2.5 text-slate-400">
                 <Phone className="h-4 w-4 text-brand-400 shrink-0 mt-0.5" />
                 <div>

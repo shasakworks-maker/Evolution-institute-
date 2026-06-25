@@ -3,6 +3,7 @@ import Navbar from "./components/Navbar";
 import Hero from "./components/Hero";
 import About from "./components/About";
 import Courses from "./components/Courses";
+import OfficialBanners from "./components/OfficialBanners";
 import WhyChooseUs from "./components/WhyChooseUs";
 import Results from "./components/Results";
 import Teachers from "./components/Teachers";
@@ -60,6 +61,9 @@ export default function App() {
 
         {/* 4. Courses Catalog (Classes 9, 10, 11, 12, competitive options) */}
         <Courses onEnquireClick={handleCourseEnquiry} />
+
+        {/* Official Publications: Prospectus & Syllabus Pamphlets */}
+        <OfficialBanners onEnquireClick={handleCourseEnquiry} />
 
         {/* 5. Toppers Results Hall of Fame */}
         <Results />
